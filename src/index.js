@@ -9,7 +9,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path= '/' element = {<Login_Cliente/>} />
+        <Route path= '/login' element = {<Login_Cliente/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

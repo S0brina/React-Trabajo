@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import LoginForm from "./components/LoginForm"
 
-function LoginPage() {
+function Login_Cliente() {
 
     const navigate = useNavigate()
 
@@ -43,4 +43,4 @@ function LoginPage() {
     </div>
 }
 
-export default LoginPage
+export default Login_Cliente
