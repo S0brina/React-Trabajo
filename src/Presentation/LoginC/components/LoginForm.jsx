@@ -13,14 +13,14 @@ function LoginForm(props) {
     return <form>
         <div className="formulario">
             <div className="control-group">
-                <input type="text" id="login-name" placeholder="Nombre de usuario">
+                <input type="text" id="login-name" placeholder="Nombre de usuario"
                 value={ usuario }
-                onChange={ function(evt) { setUsuario(evt.target.value) } }</input>
+                onChange={ function(evt) { setUsuario(evt.target.value) } }></input>
             </div>
             <div className="control-group">
-                <input type="password" id="login-pass" placeholder="Contraseña">
+                <input type="password" id="login-pass" placeholder="Contraseña"
                 value={ password }
-                onChange={ function(evt) { setPassword(evt.target.value) } }</input>
+                onChange={ function(evt) { setPassword(evt.target.value) } }></input>
             </div>
         </div>
         
