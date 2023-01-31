@@ -12,7 +12,6 @@ export default function HomeNavbar() {
           }}
           href="#"
         >
-          MedicApp
         </a>
         <button
           className="navbar-toggler"
@@ -26,7 +25,7 @@ export default function HomeNavbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
             <li className="nav-item">
               <a
                 href="#"
@@ -36,7 +35,7 @@ export default function HomeNavbar() {
                   navigate("/");
                 }}
               >
-                Recomendaciones
+                Inicio
               </a>
             </li>
 
@@ -49,7 +48,7 @@ export default function HomeNavbar() {
                   navigate("/");
                 }}
               >
-                Recomendaciones
+                Restaurantes
               </a>
             </li>
 
@@ -62,7 +61,7 @@ export default function HomeNavbar() {
                   navigate("/");
                 }}
               >
-                Recomendaciones
+                Promociones
               </a>
             </li>
 
@@ -75,20 +74,7 @@ export default function HomeNavbar() {
                   navigate("/");
                 }}
               >
-                Recomendaciones
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a
-                href="#"
-                className="nav-link active"
-                aria-current="page"
-                onClick={() => {
-                  navigate("/");
-                }}
-              >
-                Recomendaciones
+                Para Restaurantes
               </a>
             </li>
 
@@ -97,20 +83,20 @@ export default function HomeNavbar() {
             onClick={() => {
               navigate("/home/login");
             }}
-            className="btn btn-outline-info me-2"
+            className="btn btn-outline-success mx-2"
             type="submit"
           >
             {" "}
-            SignIn{" "}
+            Inicio de Sesión{" "}
           </a>
           <a
             onClick={() => {
               navigate("/home/selectregister");
             }}
-            className="btn btn-info"
+            className="btn btn-outline-success"
             type="submit"
           >
-            SignUp
+            Carrito de compras
           </a>
         </div>
       </div>
