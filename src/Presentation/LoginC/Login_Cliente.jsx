@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import Navbar from "../Navbar"
 import LoginForm from "./components/LoginForm"
 import Log_Cli from "./Log_Cli.css"
 
@@ -33,15 +34,21 @@ function Login_Cliente() {
         }
     }
 
-    return <div className="login">
-        <div className="login-screen">
-            <div className="app-title">
-                <h1>Inicio de Sesión</h1>
+    return (
+        <body>
+            <Navbar />
+            <div className="login">
+            <div className="login-screen">
+                <div className="app-title">
+                    <h1>Inicio de Sesión</h1>
+                </div>
+                <LoginForm 
+                onLoginOk={ onLoginOk } />
+                </div>
             </div>
-            <LoginForm 
-            onLoginOk={ onLoginOk } />
-        </div>
-    </div>
+        </body>
+    ) 
+    
 }
 
 export default Login_Cliente
