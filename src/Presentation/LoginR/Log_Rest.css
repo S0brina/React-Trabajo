@@ -17,3 +17,7 @@ body{
     text-align: center;
     color: #777;
   }
+  .control-group {
+    margin-bottom: 10px;
+  }
+    
