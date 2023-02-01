@@ -1,9 +1,10 @@
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import Categorias from "./components/Categorias"
+import Navbar from "../Navbar"
 
 function RestauranteCont(){
-    const listaBebidas=[
+    const listaPizzas=[
         {
             imagen: "https://plazavea.vteximg.com.br/arquivos/ids/1538987-220-220/26887.jpg?v=637548077932200000" ,
             nombre: "Pizza Americana Familiar",
@@ -17,7 +18,7 @@ function RestauranteCont(){
 
     useEffect(function() {
         if(location.state == null){
-            navigate("/login")
+            navigate("/")
         }
     },[])
 
@@ -29,7 +30,7 @@ function RestauranteCont(){
                 <div className="titulo-seccion">
                 <h1>Pizzas</h1>
             </div>
-                <Categorias/>
+                <Categorias platos ={listaPizzas}/>
             </div>
         </div>
         </body>

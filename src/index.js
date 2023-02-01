@@ -12,6 +12,7 @@ import Agregarplatopizza from './Presentation/Agregarpedido/Agregarplatopizza';
 import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMariscos';
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
+import RestauranteCont from './Presentation/RestCarta/RestauranteCont';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,15 +20,16 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
+        <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
         <Route path='/realizarpedido' element={<Realizarpedido/>}/>
-        <Route path= 'agregarchifa' element={<Agregarplatochifa/>}/>
-        <Route path= 'agregarmariscos' element={<Agregarplatomariscos/>}/>
-        <Route path= 'agregarpizza' element={<Agregarplatopizza/>}/>
-        <Route path= 'estadopedido' element={<Estadopedido/>}/>
-        <Route path= 'ranking' element={<Ranking/>}/>
+        <Route path= '/agregarchifa' element={<Agregarplatochifa/>}/>
+        <Route path= '/agregarmariscos' element={<Agregarplatomariscos/>}/>
+        <Route path= '/agregarpizza' element={<Agregarplatopizza/>}/>
+        <Route path= '/estadopedido' element={<Estadopedido/>}/>
+        <Route path= '/ranking' element={<Ranking/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

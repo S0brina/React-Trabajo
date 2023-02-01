@@ -14,8 +14,7 @@ function CardPlato(props){
             <div className="plato-precio">
                     <h6>{props.plato.precio}</h6>
             </div>
-            <button className="btnagr" type="button"
-            onClick={ butOnClick }>
+            <button className="btnagr" type="button">
             Agregar
         </button>
         </div>

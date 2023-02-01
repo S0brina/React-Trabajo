@@ -8,13 +8,13 @@ function Categorias(props){
         if(index % 3 ===0){
             listaCols.push(
                 <div className ="col">
-                    <CardPlato plato={plato}/>
+                    <CardPlato key={plato.id} plato={plato}/>
                 </div>
             )
         }else{
             listaCols.push(
                 <div className ="col">
-                    <CardPlato plato={plato}/>
+                    <CardPlato key={plato.id} plato={plato}/>
                 </div>
             )
             listaRows.push(
@@ -30,7 +30,8 @@ function Categorias(props){
         listaCols = []
         listaCols.push(
             <div className = "col">
-                <CardPlato plato={props.platos[props.platos.length-1]}/>
+                < CardPlato key={props.platos[props.platos.length -1].id} 
+                    plato={props.platos[props.platos.length-1]}/>
             </div>
         )
         listaRows.push(        
