@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
-import logo from "./logo.JPG";
+import style from './style.css';
+import index from "./index.css"
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
@@ -23,10 +24,11 @@ const App = () => {
   return (
     <main>
       <section className="menu section">
-        <div className="title">
-          <img src={logo} alt="logo" className="logo" />
-          <h2>Menu List</h2>
-          <div className="underline"></div>
+        <div className="title info-rest">
+          <h4>Marco's Bistro</h4>
+          <div>
+           <h5>aeaeaeaeae</h5> 
+          </div>
         </div>
         <Categories
           categories={categories}

@@ -75,4 +75,19 @@
   margin-bottom: 0;
 }
  
+.cont-plato{
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.cont-cat{
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(97, 196, 102);
+}
+
+.info-rest{
+  background-color: hsla(0, 0%, 100%, 0.822);
+  border-radius: 15px;
+}
 
