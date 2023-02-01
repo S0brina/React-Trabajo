@@ -1,13 +1,14 @@
 import Navbar from "../Navbar"
+
 function Realizarpedido(){
     return (<body>
-    <navbar/>
-    <div class="container text-center">
-        <div class="titulo">
+    <Navbar/>
+    <div className="container text-center">
+        <div className="titulo">
             <h2>Realizar pedido</h2>
     </div>
-    <div class="container-carrito">
-        <table class="table table-striped table-esp">
+    <div className="container-carrito">
+        <table className="table table-striped table-esp">
             <thead>
                 <tr>
                     <th>Número de orden</th>
@@ -48,8 +49,8 @@ function Realizarpedido(){
                 </tr>
             </tbody>
         </table>
-        <div class="col">
-            <a class="btn" href="#">Realizar pedido</a>
+        <div className="col">
+            <a className="btn" href="#">Realizar pedido</a>
         </div>
     </div>
     </div>
