@@ -12,7 +12,7 @@ import Agregarplatopizza from './Presentation/Agregarpedido/Agregarplatopizza';
 import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMariscos';
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
-import RestauranteCont from './Presentation/RestCarta/RestauranteCont';
+import Carta from './Presentation/Carta/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +20,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
-        <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
+        <Route path='/MarcosBistro' element = {<Carta/>}/>
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
