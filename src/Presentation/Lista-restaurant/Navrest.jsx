@@ -33,7 +33,7 @@ function Navrest() {
                 className="nav-link active"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/ListMA");
+                  navigate("/listaMA");
                 }}
               >
                 Mariscos
@@ -49,7 +49,7 @@ function Navrest() {
                 className="nav-link active"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/ListC");
+                  navigate("/listaC");
                 }}
               >
                 Chifa
@@ -65,7 +65,7 @@ function Navrest() {
                 className="nav-link active"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/ListP");
+                  navigate("/listaP");
                 }}
               >
                 Pizzas
