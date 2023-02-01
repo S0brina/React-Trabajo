@@ -10,7 +10,8 @@ import Navrest from "./Navrest"
 
 function ListaRestaurantC(){
     return (
-    <body> <Navbar/>
+    <body> 
+    <Navbar/>
     <Navrest/>
     <h1 className="h">Lista Restaurant</h1>
     
