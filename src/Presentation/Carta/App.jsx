@@ -4,6 +4,7 @@ import Categories from "./Categories";
 import items from "./data";
 import style from './style.css';
 import index from "./index.css"
+import Navbar from "../Navbar"
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
@@ -23,11 +24,12 @@ const App = () => {
   };
   return (
     <main>
+      <Navbar />
       <section className="menu section">
-        <div className="title info-rest">
+        <div className="info-rest">
           <h4>Marco's Bistro</h4>
           <div>
-           <h5>aeaeaeaeae</h5> 
+           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5> 
           </div>
         </div>
         <Categories

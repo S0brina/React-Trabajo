@@ -89,5 +89,7 @@
 .info-rest{
   background-color: hsla(0, 0%, 100%, 0.822);
   border-radius: 15px;
+  padding: 20px;
+  margin: 15px;
 }
 
