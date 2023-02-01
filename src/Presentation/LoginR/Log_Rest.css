@@ -1,0 +1,19 @@
+body{
+        background-image: url(https://img.freepik.com/foto-gratis/interior-borroso-abstracto-cafeteria-cafe-interior_74190-6342.jpg?w=996&t=st=1674082845~exp=1674083445~hmac=5ec3a8deb66b5e4225829e38ec5d9eb63872bef4ec4980f10a24111f0aa5808e);
+      }
+
+.login {
+    margin: 20px auto;
+    width: 300px;
+    text-align: center;
+    }
+
+  .login-screenRest {
+    background-color: #a7cc91d3;
+    padding: 20px;
+    border-radius: 5px
+  }
+  .app-title {
+    text-align: center;
+    color: #777;
+  }
