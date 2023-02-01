@@ -12,7 +12,7 @@ function Navrest() {
           }}
           href="#"
         >
-          MedicApp
+          
         </a>
         <button
           className="navbar-toggler"
