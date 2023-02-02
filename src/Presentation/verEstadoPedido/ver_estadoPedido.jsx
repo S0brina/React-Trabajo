@@ -21,20 +21,20 @@ function Ver_estadoPedido() {
             <div class="container text-center"/>
                 <div class="titulo">
                     <h2>Pedidos Realizados Ultimamente</h2>
-            </div>
+                </div>
+            <div class="container">
             <div className="container-pedidoU">
-                    <div class="row col-2">
-                    <p>Inserte Codigo de Pedido:</p>  
+                    <div class="row col-4">
+                        <p>Inserte Codigo de Pedido:</p>  
+                    </div>
                     <BuscadorCF/>
-                    <div className="card">
-                        <h2>Estado del pedido</h2>
-                        
-                        <p>TIEMPO TRANSCURRIDO:</p>
-                        <img src={i07} alt="reloj"></img>
-                    </div>
-                    </div>
-                   <div className="row">
-                   <div class="card col-3 bg-success"> 
+                    <div class="card text-center">
+            <div class="card-body">
+              <h2 class="card-text " >Estado del pedido</h2>
+              <img src={i07} alt="reloj"></img>
+                <h3 class="card-title" >Tiempo de espera aproximado: 25 minutos</h3>
+              <div class="row">
+                <div class="card col-3 bg-success"> 
                     <div class="card-body"> 
                         <div class="card-text">
                             El local ha aceptado su pedido
@@ -63,6 +63,9 @@ function Ver_estadoPedido() {
                     </div>
                   </div>
               </div>
+            </div>
+          </div>
+        </div>
             </div>
         </body>
     )
