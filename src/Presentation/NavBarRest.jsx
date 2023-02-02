@@ -45,7 +45,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/MostrarPedidoRealizado");
                 }}
               >
                 Pedidos
@@ -58,10 +58,10 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/Registros");
                 }}
               >
-                Registrar
+                Platos Agregados
               </a>
             </li>
 
@@ -71,7 +71,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/estadopedido");
                 }}
               >
                 Estado
@@ -84,7 +84,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/RegistrarPedido");
                 }}
               >
                 Registrar Cod
@@ -95,7 +95,7 @@ export default function HomeNavbar() {
           </ul>
           <a
             onClick={() => {
-              navigate("/home/login");
+              navigate("/loginRest");
             }}
             className="btn btn-outline-success mx-2"
             type="submit"
@@ -105,7 +105,7 @@ export default function HomeNavbar() {
           </a>
           <a
             onClick={() => {
-              navigate("/home/selectregister");
+              navigate("/loginCliente");
             }}
             className="btn btn-outline-success"
             type="submit"

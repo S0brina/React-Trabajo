@@ -58,10 +58,22 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/realizarpedido");
                 }}
               >
-                Promociones
+                Realizar Pedido
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="#"
+                className="nav-link text-dark"
+                aria-current="page"
+                onClick={() => {
+                  navigate("/ver_estadoPedido");
+                }}
+              >
+                VerificarEstadoPedido
               </a>
             </li>
 
@@ -71,7 +83,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/loginRest");
                 }}
               >
                 Para Restaurantes
@@ -81,7 +93,7 @@ export default function HomeNavbar() {
           </ul>
           <a
             onClick={() => {
-              navigate("/home/login");
+              navigate("/loginCliente");
             }}
             className="btn btn-outline-success mx-2"
             type="submit"
@@ -91,7 +103,7 @@ export default function HomeNavbar() {
           </a>
           <a
             onClick={() => {
-              navigate("/home/selectregister");
+              navigate("/ShopCar");
             }}
             className="btn btn-outline-success"
             type="submit"
