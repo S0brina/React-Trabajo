@@ -32,11 +32,11 @@ root.render(
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
         <Route path='/realizarpedido' element={<Realizarpedido/>}/>
-        <Route path= 'agregarchifa' element={<Agregarplatochifa/>}/>
-        <Route path= 'agregarmariscos' element={<Agregarplatomariscos/>}/>
-        <Route path= 'agregarpizza' element={<Agregarplatopizza/>}/>
-        <Route path= 'estadopedido' element={<Estadopedido/>}/>
-        <Route path= 'ranking' element={<Ranking/>}/>
+        <Route path= '/agregarchifa' element={<Agregarplatochifa/>}/>
+        <Route path= '/agregarmariscos' element={<Agregarplatomariscos/>}/>
+        <Route path= '/agregarpizza' element={<Agregarplatopizza/>}/>
+        <Route path= '/estadopedido' element={<Estadopedido/>}/>
+        <Route path= '/ranking' element={<Ranking/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
         <Route path='/ver_estadoPedido' element={<Ver_estadoPedido/>}/>
       </Routes>
