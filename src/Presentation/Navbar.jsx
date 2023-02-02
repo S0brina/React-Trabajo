@@ -29,7 +29,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -42,7 +42,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -55,7 +55,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -68,7 +68,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");

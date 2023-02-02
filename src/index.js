@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login_Cliente from './Presentation/LoginC/Login_Cliente';
+import App from './Presentation/Carta/App'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import ListaRestaurantMA from './Presentation/Lista-restaurant/ListaRestaurantMA';
 import ListaRestaurantC from './Presentation/Lista-restaurant/ListaRestaurantC';
@@ -21,8 +22,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+<<<<<<< HEAD
         <Route path= '/loginCliente' element = {<RestauranteCont/>} />
         <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
+=======
+        <Route path= '/loginCliente' element = {<Login_Cliente/>} />
+        <Route path='/MarcosBistro' element = {<App/>}/>
+>>>>>>> 67f63ce03203a521ade61a1032b89827f1406a53
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
