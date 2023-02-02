@@ -22,13 +22,12 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
         <Route path= '/loginCliente' element = {<RestauranteCont/>} />
         <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
-=======
+
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/MarcosBistro' element = {<App/>}/>
->>>>>>> 67f63ce03203a521ade61a1032b89827f1406a53
+
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
