@@ -42,10 +42,7 @@ return(
                   <td>{codigoVer}</td>
                     <td>pizza hawaiana</td>                    
                     <td> Miley Cyrus, Montecito.</td>
-                    <td> Recogido en tienda...</td>
-                    
-                    
-                    
+                    <td> Recogido en tienda...</td>                    
                 </tr>
             </tbody>
         </table>
