@@ -1,4 +1,4 @@
-import Navbar from "../Navbar"
+import Navbar from "../NavbarUser"
 import { useState } from "react"
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import React from "react";

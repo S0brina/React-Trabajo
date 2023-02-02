@@ -4,7 +4,7 @@ import Categories from "./Categories";
 import items from "./data";
 import style from './style.css';
 import index from "./index.css"
-import Navbar from "../Navbar"
+import Navbar from "../NavbarUser"
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 

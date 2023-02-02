@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavBar from "../Navbar"
+import NavBar from "../NavbarUser"
 
 function Carrito() {
   const [cards] = useState([

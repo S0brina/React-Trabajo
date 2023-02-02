@@ -1,5 +1,5 @@
 import NavAg from "./NavAg";
-import Navbar from "../Navbar";
+import Navbar from "../NavbarUser";
 
 function Agregarplatochifa(){return(
     <body>

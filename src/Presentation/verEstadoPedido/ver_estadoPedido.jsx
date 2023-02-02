@@ -1,5 +1,5 @@
 
-import Navbar from "../Navbar"
+import Navbar from "../NavbarUser"
 import BuscadorCF from "./components/BuscadorCF"
 import "./ver_EstadoPedido.css"
 import i07 from "./reloj.png"
