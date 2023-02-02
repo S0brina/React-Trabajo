@@ -25,11 +25,11 @@ export default function HomeNavbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+          <ul className=" navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -42,7 +42,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -55,7 +55,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");
@@ -68,7 +68,7 @@ export default function HomeNavbar() {
             <li className="nav-item">
               <a
                 href="#"
-                className="nav-link active"
+                className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
                   navigate("/");

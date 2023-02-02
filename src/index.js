@@ -14,6 +14,7 @@ import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMaris
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
+import Carrito from './Presentation/ShopCar/Carrito';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +33,7 @@ root.render(
         <Route path= 'estadopedido' element={<Estadopedido/>}/>
         <Route path= 'ranking' element={<Ranking/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
+        <Route path='/ShopCar' element={<Carrito/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -93,3 +93,23 @@
   margin: 15px;
 }
 
+.cont-car{
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.car-item{
+  display: grid;
+  gap: 1rem 2rem;
+}
+
+.photo-car {
+  object-fit: cover;
+  height: 90px;
+  width: 100%;
+  border-radius: 0.25rem;
+  display: block;
+}
