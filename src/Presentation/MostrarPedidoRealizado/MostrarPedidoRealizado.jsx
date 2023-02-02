@@ -1,10 +1,15 @@
 import React from "react";
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import "../MostrarPedidoRealizado/script"
+import Navbar from "../Navbar"
 
 const MostrarPedidoRealizado = () => {
+
     return(
+      
         <div>
+          <Navbar />
+          
             <div className="container text-center">
         <div className="titulo">
           <h2>Pedidos Realizados Ultimamente</h2>

@@ -1,7 +1,7 @@
 
 import Navbar from "../Navbar"
 import BuscadorCF from "./components/BuscadorCF"
-import "../verEstadoPedido/ver_EstadoPedido.css"
+import "./ver_EstadoPedido.css"
 import i07 from "./reloj.png"
 
 let mostrarTiempo = document.getElementById('t-restante');
@@ -14,7 +14,6 @@ let tiempoRegresivoid =null;
 
 
 function Ver_estadoPedido() {
-    
 
     return(
         <body>
@@ -31,7 +30,6 @@ function Ver_estadoPedido() {
                         <h2>Estado del pedido</h2>
                         
                         <p>TIEMPO TRANSCURRIDO:</p>
-                        
                         <img src={i07} alt="reloj"></img>
                     </div>
                     </div>

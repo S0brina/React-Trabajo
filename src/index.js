@@ -14,16 +14,17 @@ import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMaris
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
-import RestauranteCont from './Presentation/RestCarta/RestauranteCont';
-import Ver_estadoPedido from './Presentation/VerEstadoPedido/Ver_estadoPedido';
+import Ver_estadoPedido from './Presentation/verEstadoPedido/ver_estadoPedido';
+import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/MostrarPedidoRealizado';
+import RegistrarPedido from './Presentation/RegistrarPedido/RegistrarPedido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path= '/loginCliente' element = {<RestauranteCont/>} />
-        <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
+
+        
 
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/MarcosBistro' element = {<App/>}/>
@@ -32,21 +33,20 @@ root.render(
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>
         <Route path='/realizarpedido' element={<Realizarpedido/>}/>
-        <Route path= '/agregarchifa' element={<Agregarplatochifa/>}/>
-        <Route path= '/agregarmariscos' element={<Agregarplatomariscos/>}/>
-        <Route path= '/agregarpizza' element={<Agregarplatopizza/>}/>
-        <Route path= '/estadopedido' element={<Estadopedido/>}/>
-        <Route path= '/ranking' element={<Ranking/>}/>
+        <Route path= 'agregarchifa' element={<Agregarplatochifa/>}/>
+        <Route path= 'agregarmariscos' element={<Agregarplatomariscos/>}/>
+        <Route path= 'agregarpizza' element={<Agregarplatopizza/>}/>
+        <Route path= 'estadopedido' element={<Estadopedido/>}/>
+        <Route path= 'ranking' element={<Ranking/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
         <Route path='/ver_estadoPedido' element={<Ver_estadoPedido/>}/>
+        <Route path='/MostrarPedidoRealizado' element={<MostrarPedidoRealizado/>}/>
+        <Route path='/RegistrarPedido' element={<RegistrarPedido/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 
 

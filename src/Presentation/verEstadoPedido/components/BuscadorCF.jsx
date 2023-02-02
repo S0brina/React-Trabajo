@@ -1,24 +1,26 @@
 import { useState } from "react"
 
 import "../ver_EstadoPedido.css"
-function BuscadorCF(props){
+const BuscadorCF = () => {
 
     const [codigoVer, setcodigoVer] = useState("")
 
-    /*const butOnClick = function(){
-        props.on
-    }*/
 
-    return <form class="d-flex" role="search">
+    return (
+        <form class="d-flex"  
+                onSubmit={ev =>{ 
+                    ev.preventDefault();
+                    setcodigoVer(ev.target.search.value);
+                }}
+        >
         <div>
-            <input className="form-control me-2" type="search" placeholder="Codigo" aria-label="Search"
-                value={codigoVer}
-                onChange={ function(evt) {setcodigoVer(evt.target.value) } }/>
+            <input name = 'search' className="form-control me-2" type="text" placeholder="Codigo" aria-label="Search"/>
 
-            <button className="btn btn-outline-success" type="submit">Buscar</button>
-            <h5>En caso de algun problema su codigo de pedido es: codigo :1920</h5>
+            <button type="submit" className="btn btn-outline-success">Buscar</button>
+            <h5>En caso de algun problema su codigo de pedido es: {codigoVer}</h5>
         </div>
     </form>
-}
+    );
+};
 
 export default BuscadorCF
