@@ -25,8 +25,6 @@ root.render(
     <BrowserRouter>
       <Routes>
 
-        
-
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/MarcosBistro' element = {<App/>}/>
 

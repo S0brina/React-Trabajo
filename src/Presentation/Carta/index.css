@@ -88,12 +88,8 @@ p {
 
 .section-center {
   width: 90vw;
-<<<<<<< HEAD
   margin: 0 auto;
   margin-bottom: 20px;
-=======
-  margin-bottom: 30px;
->>>>>>> ced88922e903326bb564d0f51817b987334a89b8
   max-width: 1170px;
   display: grid;
   gap: 3rem 2rem;
