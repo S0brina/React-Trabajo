@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-trabajo/static/css/main.8613db7e.css",
+    "main.js": "/react-trabajo/static/js/main.f103970e.js",
+    "static/media/img14.png": "/react-trabajo/static/media/img14.968102f24cab10ed1f61.png",
+    "static/media/img12.png": "/react-trabajo/static/media/img12.8e6bf4071da88676a1c0.png",
+    "static/media/img11.png": "/react-trabajo/static/media/img11.f0b209331073a6860bb5.png",
+    "static/media/reloj.png": "/react-trabajo/static/media/reloj.7d51f096dcfe6bdc3e50.png",
+    "static/media/img13.png": "/react-trabajo/static/media/img13.d7d2e06545ee9c5c0b0c.png",
+    "index.html": "/react-trabajo/index.html",
+    "main.8613db7e.css.map": "/react-trabajo/static/css/main.8613db7e.css.map",
+    "main.f103970e.js.map": "/react-trabajo/static/js/main.f103970e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8613db7e.css",
+    "static/js/main.f103970e.js"
+  ]
+}
