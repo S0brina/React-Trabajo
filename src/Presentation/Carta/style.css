@@ -113,3 +113,9 @@
   border-radius: 0.25rem;
   display: block;
 }
+
+.cont-hist{
+  margin: 50px;
+  padding: 50px;
+  border-radius: 20px;
+}

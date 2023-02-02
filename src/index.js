@@ -14,6 +14,7 @@ import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMaris
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
+import Hist from './Presentation/Historial/Hist';
 import Carrito from './Presentation/ShopCar/Carrito';
 import Ver_estadoPedido from './Presentation/verEstadoPedido/ver_estadoPedido';
 import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/MostrarPedidoRealizado';
@@ -27,7 +28,7 @@ root.render(
 
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/MarcosBistro' element = {<App/>}/>
-
+        <Route path='/Registros' element = {<Hist/>}/>
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
         <Route path= '/listaP' element ={<ListaRestaurantP/>}/>

@@ -60,9 +60,6 @@ function Carrito() {
                     <div>Monto total: S./{mtotal}</div>
                 </div>
                   
-                  
-                
-          
               </article>
               </div>
             );
