@@ -1,28 +1,61 @@
-import Navbar from "../NavBarRest";
-import i1 from "../imagenes1/img11.png"
+
+import Navbar from "../NavbarUser";
+
+import {useState} from 'react';
+import Navbar from "../NavbarUser"
 
 function Estadopedido(){
-    var mesage="terminado";
+    const [plato] = useState([
+        {   title: "Pizza",
+            priceU: "15",
+            cliente: "Kiyoshi",
+            mtotal: "15",
+        },
+       /* {   title: "Lasagna",
+        priceU: "18",
+        cliente: "Franco",
+        mtotal: "18",
+    },*/])
+
+    ;
+    const[mesage,setMesage]=useState("en preparacion");
     return (
         <body>
-            <Navbar/>
-         <div className="layerlist1">
-			<h3>01</h3>
-			<div className="restaurant1">
-				<h4>Pizza americana</h4>
-				<h5>mesa 5</h5> </div>
-                        <div className="layerlist1">
-                        
-                        <img className="i1" src={i1} alt="imageAlbum"/> 
-			</div>
-</div>
+         <Navbar/>   
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Numero pedido</th>
+      <th scope="col">producto</th>
+      <th scope="col">Precio unitario</th>
+      <th scope="col">cliente</th>
+      <th scope="col">Montototal</th>
+      <th scope="col">Estado de pedido:</th>
+
+      
+    </tr>
+  </thead>
+  {plato.map((item) => {
+            const {title, priceU, cliente,Montotal } = item;
+            return (
+                <tbody>
+                <tr>
+                 <th scope="row">1</th>
+                 <td>{title}</td>
+                 <td>{priceU}</td>
+                 <td>{cliente}</td>
+                 <td>{Montotal}</td>
+                 <td><p>{mesage}</p></td>
+                 <td><button  className="btn btn-btn-danger" onClick={()=>setMesage("Terminado")}>Actualizar</button></td>
+                </tr>
+                 </tbody>
+              
+            );
+          })}
+  
 			
- <div className="container text-center py-5">
-    <p>Estado de pedido</p>
-  <h2  id="titulo" className="display-3 py-5">En preparacion</h2>
-  <button id="boton" className="btn btn-btn-danger" onclick='document.getElementById("titulo").innerHTML= mesage; '>Actualizar</button>
- </div>
  
+ </table>
         </body>
     )
 }

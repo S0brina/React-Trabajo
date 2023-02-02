@@ -7,8 +7,33 @@ function Realizarpedido(){
         <div className="titulo">
             <h2>Realizar pedido</h2>
     </div>
-    <div className="container-carrito">
-        <table className="table table-striped table-esp">
+    <div className="container carrito">
+    <form>
+  <div class="form-group mb-6">
+    <label for="exampleFormControlInput1">Nombres y Apelllidos</label>
+    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="nombres y apellidos"/>
+  </div>
+  <div class="form-group mb-6">
+    <label for="exampleFormControlInput1">Correo electronico</label>
+    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="correo electronico"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Modalidad de pago</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1. Efectivo</option>
+      <option>2. Credito</option>
+    </select>
+  </div>
+  <div class="form-group mb-4">
+    <label for="exampleFormControlInput1">Direccion</label>
+    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Direccion"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Recomendaciones al dejar el pedido</label>
+    <textarea class="form-control mb-6" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+        <table className="table table-striped table-esp mb-6">
             <thead>
                 <tr>
                     <th>Número de orden</th>
