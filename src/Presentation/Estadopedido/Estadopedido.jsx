@@ -1,8 +1,8 @@
 
-import Navbar from "../NavbarUser";
+import HomeNavbar from "../NavbarUser";
 
 import {useState} from 'react';
-import Navbar from "../NavbarUser"
+
 
 function Estadopedido(){
     const [plato] = useState([

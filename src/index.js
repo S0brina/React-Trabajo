@@ -7,11 +7,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import App1 from './Presentation/Lista restaurant/App1';
 import App2 from './Presentation/Agregar-pedido/App2';
 import Realizarpedido from './Presentation/Realizarpedido/Realizarpedido';
-import Agregarplatochifa from './Presentation/Agregarpedido/Agregarplatochifa';
-import Agregarplatopizza from './Presentation/Agregarpedido/Agregarplatopizza';
-import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMariscos';
+
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
-import Ranking from './Presentation/Ranking/Ranking';
+
 import Login_Rest from './Presentation/LoginR/Login_Rest';
 import Hist from './Presentation/Historial/Hist';
 import Carrito from './Presentation/ShopCar/Carrito';
