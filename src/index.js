@@ -13,13 +13,15 @@ import Agregarplatomariscos from './Presentation/Agregarpedido/AgregarplatoMaris
 import Estadopedido from './Presentation/Estadopedido/Estadopedido';
 import Ranking from './Presentation/Ranking/Ranking';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
+import RestauranteCont from './Presentation/RestCarta/RestauranteCont';
+import Ver_estadoPedido from './Presentation/VerEstadoPedido/Ver_estadoPedido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path= '/loginCliente' element = {<Login_Cliente/>} />
+        <Route path= '/loginCliente' element = {<RestauranteCont/>} />
         <Route path='/MarcosBistro' element = {<RestauranteCont/>}/>
         <Route path= '/listaMA' element ={<ListaRestaurantMA/>}/>
         <Route path= '/listaC' element ={<ListaRestaurantC/>}/>
@@ -31,6 +33,7 @@ root.render(
         <Route path= 'estadopedido' element={<Estadopedido/>}/>
         <Route path= 'ranking' element={<Ranking/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
+        <Route path='/ver_estadoPedido' element={<Ver_estadoPedido/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
