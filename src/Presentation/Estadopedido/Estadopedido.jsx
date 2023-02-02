@@ -1,4 +1,4 @@
-import Navbar from "../Navbar";
+import Navbar from "../NavbarUser";
 import i1 from "../imagenes1/img11.png"
 
 function Estadopedido(){

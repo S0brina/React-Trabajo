@@ -1,4 +1,4 @@
-import Navbar from "../Navbar";
+import Navbar from "../NavbarUser";
 import i1 from "../imagenes1/img1.png"
 import i2 from "../imagenes1/img2.png"
 import i3 from "../imagenes1/img3.png"

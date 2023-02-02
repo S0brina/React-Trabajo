@@ -1,4 +1,4 @@
-import Navbar from "../Navbar"
+import Navbar from "../NavbarUser"
 
 function Realizarpedido(){
     return (<body>
