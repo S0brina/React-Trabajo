@@ -25,7 +25,7 @@ root.render(
       <Routes>
 
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
-        <Route path='React-Trabajo/MarcosBistro' element = {<App/>}/>
+        <Route path='/React-Trabajo/MarcosBistro' element = {<App/>}/>
         <Route path='/Registros' element = {<Hist/>}/>
         <Route path= '/lista' element ={<App1/>}/>
         <Route path='/realizarpedido' element={<Realizarpedido/>}/>
