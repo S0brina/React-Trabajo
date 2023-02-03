@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import Navbar from "../NavbarUser"
+import Navbar from "../NavBarRest"
 import LoginForm from "./components/LoginRestForm"
 import Log_Rest from "./Log_Rest.css"
 

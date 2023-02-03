@@ -1,7 +1,7 @@
 import React from "react";
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import "../MostrarPedidoRealizado/script"
-import Navbar from "../NavbarUser"
+import Navbar from "../NavBarRest"
 
 const MostrarPedidoRealizado = () => {
 

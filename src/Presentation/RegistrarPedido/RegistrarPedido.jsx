@@ -1,4 +1,4 @@
-import Navbar from "../NavbarUser"
+import Navbar from "../NavBarRest"
 import { useState } from "react"
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import React from "react";
@@ -42,10 +42,7 @@ return(
                   <td>{codigoVer}</td>
                     <td>pizza hawaiana</td>                    
                     <td> Miley Cyrus, Montecito.</td>
-                    <td> Recogido en tienda...</td>
-                    
-                    
-                    
+                    <td> Recogido en tienda...</td>                    
                 </tr>
             </tbody>
         </table>

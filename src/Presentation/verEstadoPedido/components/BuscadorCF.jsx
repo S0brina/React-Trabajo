@@ -14,7 +14,7 @@ const BuscadorCF = () => {
                 }}
         >
         <div>
-            <input name = 'search' className="form-control me-2" type="text" placeholder="Codigo" aria-label="Search"/>
+            <input name = 'search' className="sr-only" type="text" placeholder="Codigo" aria-label="Search"/>
 
             <button type="submit" className="btn btn-outline-success">Buscar</button>
             <h5>En caso de algun problema su codigo de pedido es: {codigoVer}</h5>
