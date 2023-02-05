@@ -1,5 +1,5 @@
 
-import HomeNavbar from "../NavbarUser";
+import Navbar from "../NavbarUser";
 
 import {useState} from 'react';
 
