@@ -32,7 +32,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/");
+                  navigate("/lista");
                 }}
               >
                 Inicio
@@ -48,32 +48,7 @@ export default function HomeNavbar() {
                   navigate("/");
                 }}
               >
-                Restaurantes
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a
-                href="#"
-                className="nav-link text-dark"
-                aria-current="page"
-                onClick={() => {
-                  navigate("/realizarpedido");
-                }}
-              >
-                Realizar Pedido
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                href="#"
-                className="nav-link text-dark"
-                aria-current="page"
-                onClick={() => {
-                  navigate("/ver_estadoPedido");
-                }}
-              >
-                VerificarEstadoPedido
+                Promociones
               </a>
             </li>
 
@@ -99,7 +74,7 @@ export default function HomeNavbar() {
             type="submit"
           >
             {" "}
-            Inicio de Sesión{" "}
+            Mi cuenta{" "}
           </a>
           <a
             onClick={() => {

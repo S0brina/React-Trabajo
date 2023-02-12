@@ -7,12 +7,30 @@ function Login_Cliente() {
 
     const navigate = useNavigate()
 
-    const onLoginOk = function(
+    const loginHttp = async function(usuario, password) {
+        const response = await fetch(
+            "http://localhost:8000/endpoints/loginCliente",
+            {
+                method : "POST",
+                body : JSON.stringify(
+                    { 
+                        usuario : usuario, 
+                        password : password 
+                    }
+                )
+            }
+        )
+        const data = await response.json()
+
+        return data.error
+    }
+
+    const onLoginOk = async function(
         usuario, password
     ) {
-        if (usuario === "pw" 
-            && password === "123") {
-
+        const error = await loginHttp(usuario, password)
+        if (error === "") {
+            // Login correcto
             const dataUsuario = {
                 username : usuario,
                 password : password
@@ -20,17 +38,16 @@ function Login_Cliente() {
 
             // JSON.stringify : convierte objetos js a JSON (string)
             const dataUsuarioJSON = JSON.stringify(dataUsuario)
-            console.log(dataUsuario)
-            console.log(dataUsuarioJSON)
             // Guardado en session storage
             sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
 
-
-            navigate("/main", {
+            navigate("/React-Trabajo/lista#", {
                 state : {
                     username : usuario
                 }
             })
+        }else {
+            console.error(error)
         }
     }
 
