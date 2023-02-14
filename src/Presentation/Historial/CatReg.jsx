@@ -1,35 +1,60 @@
+import { useState, useEffect } from "react";
 
-const CatReg = () => {
-    return(
-       <table className="table table-striped table-hover">
-                    <thead className="bg-dark">
-                        <tr>
-                            <th>ID Registro</th>
-                            <th>Categoría</th>
-                            <th>Fecha de registro</th>  
-                            <th> </th>                   
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Pizzas</td>
-                            <td>10/02/2021</td>
-                            <td>
-                                <button className ="btn btn-dark" type="button">Deshacer</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Pastas</td>
-                            <td>10/02/2021</td>
-                            <td>
-                                <button className="btn btn-dark" type="button">Deshacer</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table> 
-    )
-}
-export default CatReg;
+const CatReg = () =>{
     
+    function ItemRow(props) {
+  return (
+    <tr>
+      <td>{props.id}</td>
+      <td>{props.categoria}</td>
+      <td>{props.fecha}</td>
+    </tr>
+  );
+}
+
+function ItemTable(props) {
+  const itemRows = props.items.map(item => (
+    <ItemRow
+      key={item.id}
+      id={item.id}
+      cat={item.categoria}
+      fecha={item.fecha}
+    />
+  ));
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID Registro</th>
+          <th>Nombre</th>
+          <th>Fecha Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        {itemRows}
+      </tbody>
+    </table>
+  );
+}
+
+function App() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/endpoints/hist/cat")
+      .then(response => response.json())
+      .then(data => setItems(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Tabla de elementos</h1>
+      <ItemTable items={items} />
+    </div>
+  );
+}
+
+};
+export default CatReg;
+

@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
-import style from './style.css';
-import index from "./index.css"
-import Navbar from "../NavbarUser"
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
 const App = () => {
   const [menuItems, setMenuItems] = useState(items);
   const [activeCategory, setActiveCategory] = useState("");
-  const [categories, setCategories] = useState(allCategories);
-
+  const [categories, setCategories] = useState(allCategories);  
+  
   const filterItems = (category) => {
     setActiveCategory(category);
     if (category === "all") {
@@ -22,9 +19,9 @@ const App = () => {
     const newItems = items.filter((item) => item.category === category);
     setMenuItems(newItems);
   };
+
   return (
     <main>
-      <Navbar />
       <section className="menu section">
         <div className="info-rest">
           <h4>Marco's Bistro</h4>

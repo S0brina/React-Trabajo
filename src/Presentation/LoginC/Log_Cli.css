@@ -1,7 +1,3 @@
-body{
-  background-image: url(https://img.freepik.com/free-vector/vector-seamless-burger-pattern-background_53876-177815.jpg?w=1380&t=st=1674016068~exp=1674016668~hmac=7eebf183545fbf23f2ef0dd53966d9e75102b29fd1b8c21822d55c6e4406c331);
-}
-
 .login {
     margin: 20px auto;
     width: 300px;
@@ -9,7 +5,7 @@ body{
     }
 
   .login-screen {
-    background-color: #d2ffb7;
+    background-color: #31c05c;
     padding: 20px;
     border-radius: 5px
   }

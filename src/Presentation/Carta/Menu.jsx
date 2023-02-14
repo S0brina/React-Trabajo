@@ -18,12 +18,15 @@ const Menu = ({ items }) => {
             </div>
             <button className="btn btn-outline-success mx-2 mt-4" type="button">
             Agregar
-        </button>
-          </article>
+          </button>
+          </article>          
           </div>
         );
       })}
+
     </div>
+    
+
   );
 };
 
