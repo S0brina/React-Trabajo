@@ -8,7 +8,6 @@ function LoginForm(props) {
         console.log("USuario:", usuario)
         console.log("Password:", password)
         props.onLoginOk(usuario, password)
-        alert("BIENVENIDO")
     }
     
 
