@@ -1,27 +1,51 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import Menu from "./Menu";
 import Categories from "./Categories";
-import items from "./data";
 
-const allCategories = ["all", ...new Set(items.map((item) => item.category))];
+function App(){
+  const [listplatos, setListPlatos] = useState([])
+  const [listCtg, setListCtg] = useState([])
 
-const App = () => {
-  const [menuItems, setMenuItems] = useState(items);
-  const [activeCategory, setActiveCategory] = useState("");
-  const [categories, setCategories] = useState(allCategories);  
-  
-  const filterItems = (category) => {
-    setActiveCategory(category);
-    if (category === "all") {
-      setMenuItems(items);
-      return;
+  const getCategoriaAsyncAwait = async function(){
+    try{
+      const response = await fetch("link")
+      const data = await response.json()
+      setListCtg(data)
+    }catch(error){
+       console.error("Error obteniendo categorias")
     }
-    const newItems = items.filter((item) => item.category === category);
-    setMenuItems(newItems);
-  };
+  }
 
-  return (
-    <main>
+  const filtrarPlatos = async function(ctgId){
+    try{
+      const response = await fetch("link")
+      const data = await response.json()
+
+      if (data.error ===""){
+        setListPlatos(data.platos)
+      }else{
+        console.error(data.error)
+      }
+    }catch(error){
+      console.error("Error de comunicacion")
+    }
+  }
+
+  const location = useLocation()
+  const navigate = useNavigate()
+  
+  useEffect(function(){
+    if (location.state == null){
+      navigate("/")
+    }else{
+      getCategoriaAsyncAwait()
+      filtrarPlatos(-1)
+    }
+  }, [])
+
+  return location.state!== null
+    ? <main>
       <section className="menu section">
         <div className="info-rest">
           <h4>Marco's Bistro</h4>
@@ -30,14 +54,14 @@ const App = () => {
           </div>
         </div>
         <Categories
-          categories={categories}
-          activeCategory={activeCategory}
-          filterItems={filterItems}
+          categorias={listCtg}
+          onFiltrar={filtrarPlatos}
         />
-        <Menu items={menuItems} />
+        <Menu platos={listplatos} />
       </section>
     </main>
-  );
+    : <div>Error</div>
+  
 };
 
 export default App;
