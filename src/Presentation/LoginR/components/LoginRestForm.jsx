@@ -9,6 +9,7 @@ function LoginForm(props) {
         console.log("Password:", password)
         props.onLoginOk(usuario, password)
     }
+    
 
     return <form>
         <div className="formulario">
