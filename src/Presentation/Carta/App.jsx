@@ -37,7 +37,6 @@ function App(){
   const navigate = useNavigate()
   
   useEffect(function(){
-    
       getCategoriaAsyncAwait()
       filtrarPlatos(-1)
   }, [])

@@ -15,8 +15,6 @@ import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/Mostra
 import RegistrarPedido from './Presentation/RegistrarPedido/RegistrarPedido';
 import Sorpresa from './Presentation/Pantalla sorpresa/Sorpresa';
 
-import CatReg from './Presentation/Historial/CatReg';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -24,7 +22,7 @@ root.render(
       <Routes>
 
 
-        <Route path='/aea' element={<CatReg/>}/>
+        <Route path='/aea' element={<Hist/>}/>
 
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/MarcosBistro' element = {<App/>}/>

@@ -1,37 +1,20 @@
-const PlatosReg = () => {
-    return(
-        <div>
-         <select className="mb-3">
-                    <option>Pizzas</option>
-                    <option>Pastas</option>
-                    <option>Bebidas C</option>
-                </select>
-        <table className="table table-striped table-esp table-hover">
-        <thead className="bg-dark">
+function PlatosReg(props){
+    return <table className="table table-hover">
+        <thead> 
             <tr>
-                <th>ID Registro</th>
-                <th>Plato</th>
-                <th>Categoría</th>
-                <th>Descripción</th>
-                <th>Fecha de registro</th>  
-                <th> </th>                   
+                <th>ID plato</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Descripcion</th>
+                <th>Fecha</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>03434</td>
-                <td>Lasagna</td>
-                <td>Pastas</td>
-                <td>Lasagna personal(300gr)</td>
-                <td>18/01/2023</td>
-                <td>
-                    <button className="btn btn-dark" type="button">Deshacer</button>
-                </td>
-            </tr>
+            {props.platos.map((pl,index)=>{
+            <><><td>{pl.id}</td><td>{pl.nombre}</td><td>{pl.categoria}</td></><div>{pl.descripcion}</div><div>{pl.fecha}</div></>
+            })
+            }
         </tbody>
-    </table>   
-        </div>
-        
-    )
+    </table>
 }
-export default PlatosReg;
+export default PlatosReg
