@@ -1,8 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
+
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import "../MostrarPedidoRealizado/script"
 import Navbar from "../NavBarRest"
 import axios from "axios";
+
 
 const url= "http://127.0.0.1:8000/endpoints/pedidoRelizado";
 
@@ -41,8 +43,7 @@ peticionGet=()=>{
       
         <div>
           <Navbar />
-
-            <div className="container text-center">
+        <div className="container text-center">
         <div className="titulo">
           <h2>Pedidos Realizados Ultimamente</h2>
         </div>

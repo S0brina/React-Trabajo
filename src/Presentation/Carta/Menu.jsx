@@ -1,16 +1,30 @@
 import React from "react";
 
-function Menu( props ) {
-  return <div className="section-center bg-light cont-plato">
-  <img src={ props.plato.img } 
-      className="photo" 
-      alt="..." />
-  <div className="card-body">
-      <h5 className="card-title">{props.plato.title}</h5>
-      <p className="card-text">{props.plato.price}</p>
-      <p className="card-text">{props.plato.desc}</p>
-  </div>
-</div>
-}
+const Menu = ({ items }) => {
+  return (
+    <div className="section-center">
+      {items.map((item) => {
+        const { id, title, img, desc, price } = item;
+        return (
+          <div className="bg-light cont-plato">
+          <article key={id} className="menu-item">
+            <img src={img} alt={title} className="photo" />
+            <div className="item-info">
+              <div>
+                <h4>{title}</h4>
+                <h4 className="price">S./{price}</h4>
+              </div>
+              <div className="item-text">{desc}</div>
+            </div>
+            <button className="btn btn-outline-success mx-2 mt-4" type="button">
+            Agregar
+        </button>
+          </article>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Menu;
