@@ -1,33 +1,25 @@
+
 import React from "react";
 
-const Menu = ({ items }) => {
+function Menu( props ){
   return (
-    <div className="section-center">
-      {items.map((item) => {
-        const { id, title, img, desc, price } = item;
-        return (
-          <div className="bg-light cont-plato">
-          <article key={id} className="menu-item">
-            <img src={img} alt={title} className="photo" />
-            <div className="item-info">
-              <div>
-                <h4>{title}</h4>
-                <h4 className="price">S./{price}</h4>
-              </div>
-              <div className="item-text">{desc}</div>
+    <div className= "section-center ">
+        {props.plato.map((value,index)=>(
+          <><div className=" bg-light cont-plato menu-item"><div><img src={value.img} className="photo" /></div>
+            <div>
+              <h3>{value.title}</h3>
+            <div>{value.desc}</div>
+            <div>
+            
+              <h4 className="price">S./ {value.price}</h4>
             </div>
-            <button className="btn btn-outline-success mx-2 mt-4" type="button">
-            Agregar
-          </button>
-          </article>          
-          </div>
-        );
-      })}
+            <button className="btn btn-outline-succes" type="button">Agregar</button>
+          </div></div></>
+          )
+        
+        )
+        }
+    </div>)
+}
 
-    </div>
-    
-
-  );
-};
-
-export default Menu;
+export default Menu

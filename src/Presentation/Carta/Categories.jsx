@@ -7,7 +7,7 @@ function Categories(props){
     }}>
       <option value ={-1}>Todo</option>
       {
-        props.categoria.map(function(ctg){
+        props.categorias.map(function(ctg){
           return <option value = {ctg.id}>
             {ctg.nombre}
           </option>

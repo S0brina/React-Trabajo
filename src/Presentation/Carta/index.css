@@ -117,14 +117,7 @@ p {
   border-radius: 0.25rem;  
 }
 
-.item-info header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 0.5px dotted hsl(210, 22%, 49%);
-}
-.item-info h4 {
-  margin-bottom: 0.5rem;
-}
+
 .price {
   color: black;
 }

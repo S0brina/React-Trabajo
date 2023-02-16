@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import Menu from "./Menu";
 import Categories from "./Categories";
+import NavBar from "../NavbarUser";
 
 function App(){
   const [listplatos, setListPlatos] = useState([])
@@ -9,21 +10,21 @@ function App(){
 
   const getCategoriaAsyncAwait = async function(){
     try{
-      const response = await fetch("link")
+      const response = await fetch("http://localhost:8000/endpoints/categorias/listar")
       const data = await response.json()
-      setListCtg(data)
+      setListCtg(data.categorias)
     }catch(error){
        console.error("Error obteniendo categorias")
     }
   }
 
-  const filtrarPlatos = async function(ctgId){
+  const filtrarPlatos = async function(category){
     try{
-      const response = await fetch("link")
+      const response = await fetch(`http://localhost:8000/endpoints/platos/listar?categoria=${category}`)
       const data = await response.json()
 
       if (data.error ===""){
-        setListPlatos(data.platos)
+        setListPlatos(data.carta)
       }else{
         console.error(data.error)
       }
@@ -36,19 +37,16 @@ function App(){
   const navigate = useNavigate()
   
   useEffect(function(){
-    if (location.state == null){
-      navigate("/")
-    }else{
+    
       getCategoriaAsyncAwait()
       filtrarPlatos(-1)
-    }
   }, [])
 
-  return location.state!== null
-    ? <main>
+  return<main>
+      <NavBar/>
       <section className="menu section">
         <div className="info-rest">
-          <h4>Marco's Bistro</h4>
+          <h2>Marco's Bistro</h2>
           <div>
            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5> 
           </div>
@@ -57,10 +55,9 @@ function App(){
           categorias={listCtg}
           onFiltrar={filtrarPlatos}
         />
-        <Menu platos={listplatos} />
+        <Menu plato={listplatos} />
       </section>
     </main>
-    : <div>Error</div>
   
 };
 
