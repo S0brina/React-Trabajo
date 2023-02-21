@@ -22,7 +22,7 @@ export default function LoginForm(props) {
             </div>
         </div>
         
-        <button className="btn" type="button"
+        <button className="btn btn-outline-success" type="button"
             onClick={ butOnClick }>
             Login
         </button>

@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom"
 import Navbar from "../NavbarUser"
 import LoginForm from "./components/LoginForm"
+import Log_Cli from "./Log_Cli.css"
 
 export default function Login_Cliente(props) {
 
     const navigate = useNavigate()
 
     const loginHttp = async (username, password) => {
-        if (username !== "" && password !== ""){    
+        if (username !== " " && password !== " "){    
             const response = await fetch(
                 "http://localhost:8000/endpoints/loginCliente",
                 {
@@ -33,7 +34,7 @@ export default function Login_Cliente(props) {
                 console.error(data.error)
             }
         }
-        navigate("/")
+        navigate("/MarcosBistro")
        
     }
 

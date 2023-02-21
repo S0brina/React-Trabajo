@@ -1,13 +1,17 @@
-.login {
+.login{
     margin: 20px auto;
     width: 300px;
     text-align: center;
-    }
+  }
 
-  .login-screen {
-    background-color: #31c05c;
+h1, button,form{
+  color: black;
+}
+
+  .login-screen{
+    background-color: #97e874;
     padding: 20px;
-    border-radius: 5px
+    border-radius: 5px;
   }
     
   .login-form {
@@ -29,28 +33,11 @@
     transition: border .5s;
   }
     
-  input:focus {
-    border: 2px solid #3498DB;
-    box-shadow: none;
-  }
-
   .titulo{
     text-align: left;
     margin: 20px;
     color:rgb(0, 0, 0);
     background-color: white;
-  }
-
-  .btn{
-    background-color: #adf480;
-    color: #ffffff;
-    border-color: #adf480;
-  }
-
- 
-  .btn:hover{
-    background-color: #81f151;
-    border-color: #81f151;
   }
  
   .password-link {
@@ -58,6 +45,6 @@
     color: #444;
     display: block;
     margin-top: 12px;
-  }
+}
 
 
