@@ -1,54 +1,40 @@
 import { useNavigate } from "react-router-dom"
 import Navbar from "../NavbarUser"
 import LoginForm from "./components/LoginForm"
-import Log_Cli from "./Log_Cli.css"
 
-function Login_Cliente() {
+export default function Login_Cliente(props) {
 
     const navigate = useNavigate()
 
-    const loginHttp = async function(usuario, password) {
-        const response = await fetch(
-            "http://localhost:8000/endpoints/loginCliente",
-            {
-                method : "POST",
-                body : JSON.stringify(
-                    { 
-                        usuario : usuario, 
-                        password : password 
-                    }
-                )
-            }
-        )
-        const data = await response.json()
-
-        return data.error
-    }
-
-    const onLoginOk = async function(
-        usuario, password
-    ) {
-        const error = await loginHttp(usuario, password)
-        if (error === "") {
-            // Login correcto
-            const dataUsuario = {
-                username : usuario,
-                password : password
-            }
-
-            // JSON.stringify : convierte objetos js a JSON (string)
-            const dataUsuarioJSON = JSON.stringify(dataUsuario)
-            // Guardado en session storage
-            sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
-
-            navigate("/React-Trabajo/lista#", {
-                state : {
-                    username : usuario
+    const loginHttp = async (username, password) => {
+        if (username !== "" && password !== ""){    
+            const response = await fetch(
+                "http://localhost:8000/endpoints/loginCliente",
+                {
+                    method : "POST",
+                    body : JSON.stringify(
+                        { 
+                            username : username, 
+                            password : password 
+                        }
+                    )
                 }
-            })
-        }else {
-            console.error(error)
+            )
+            const data = await response.json()
+            if (data.error ==""){
+                const dataCliente = {
+                    clienteID : data.cliente_id
+                }
+
+                const dataClienteJSON = JSON.stringify(dataCliente)
+                sessionStorage.setItem("DATA_CLIENTE", dataClienteJSON)
+                console.log(`Cliente logeado: ${data.cliente_id}`)
+            }else{
+                console.error(data.error)
+            }
         }
+        navigate("/")
+       
     }
 
     return (
@@ -60,11 +46,9 @@ function Login_Cliente() {
                     <h1>Inicio de Sesión</h1>
                 </div>
                 <LoginForm 
-                onLoginOk={ onLoginOk } />
+                loginHttp={ loginHttp } />
                 </div>
             </div>
         </body>
     )  
 }
-
-export default Login_Cliente
