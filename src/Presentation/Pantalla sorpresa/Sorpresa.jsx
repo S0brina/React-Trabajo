@@ -1,10 +1,10 @@
 import Navbar from "../NavbarUser";
-<<<<<<< HEAD
+
 import {useNavigate} from "react-router-dom"
 import {useState, useEffect} from "react"
-=======
+
 import sorpre from "./sorpre.css"
->>>>>>> e2bc358337fc68d9bff9dc694961b3251fd8577e
+
 
 function Sorpresa(){
  const [comentario, Setcomentario]=useState("")
@@ -64,6 +64,7 @@ function Sorpresa(){
     <label for="exampleFormControlTextarea1">Opiniones </label>
 
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <botton type="submit"></botton>
   </div>
   </div>
 </form>
