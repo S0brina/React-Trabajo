@@ -1,43 +1,43 @@
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Navbar from "../NavbarUser"
-import LoginForm from "./components/LoginForm"
 import Log_Cli from "./Log_Cli.css"
 
-export default function Login_Cliente(props) {
+const Login_Cliente = () => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
 
-    const navigate = useNavigate()
+    const butOnClick = async (evt) =>{
+        evt.preventDefault();
 
-    const loginHttp = async (username, password) => {
-        if (username !== " " && password !== " "){    
-            const response = await fetch(
-                "http://localhost:8000/endpoints/loginCliente",
-                {
-                    method : "POST",
-                    body : JSON.stringify(
-                        { 
-                            username : username, 
-                            password : password 
-                        }
-                    )
-                }
-            )
-            const data = await response.json()
-            if (data.error ==""){
-                const dataCliente = {
-                    clienteID : data.cliente_id
-                }
-
-                const dataClienteJSON = JSON.stringify(dataCliente)
-                sessionStorage.setItem("DATA_CLIENTE", dataClienteJSON)
-                console.log(`Cliente logeado: ${data.cliente_id}`)
-            }else{
-                console.error(data.error)
+        try{
+            const response = await fetch("http://localhost:8000/endpoints/loginCliente",{
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({
+                    username:username,
+                    password:password
+                })
+            });
+            const data = await response.json();
+            console.log(data)
+            if(data.error===""){
+                const jsonData = JSON.stringify(data.cliente)
+                sessionStorage.setItem('data',jsonData)
+                window.location.href='/MarcosBistro'
             }
+            else{
+                setError("Cuenta no existe")
+            }
+        }catch(error2){
+            console.log("error")
+            setError(error2.message)
         }
-        navigate("/MarcosBistro")
-       
-    }
-
+    };
+    
     return (
         <body>
             <Navbar />
@@ -46,10 +46,31 @@ export default function Login_Cliente(props) {
                 <div className="app-title">
                     <h1>Inicio de Sesión</h1>
                 </div>
-                <LoginForm 
-                loginHttp={ loginHttp } />
+                <form>
+        <div className="formulario">
+            <div className="control-group">
+                <input type="text" id="login-name" placeholder="Nombre de usuario"
+                value={ username }
+                onChange={ (evt) => setUsername(evt.target.value) }></input>
+            </div>
+            <div className="control-group">
+                <input type="password" id="login-pass" placeholder="Contraseña"
+                value={ password }
+                onChange={ (evt) => setPassword(evt.target.value) }></input>
+            </div>
+        </div>
+        
+        <button className="btn btn-outline-success" type="button"
+            onClick={ butOnClick }>
+            Login
+        </button>
+        <a className="password-link" href="#">¿Olvidaste tu contraseña?</a>
+    </form>
+                
+
                 </div>
             </div>
         </body>
     )  
-}
+};
+export default Login_Cliente;
