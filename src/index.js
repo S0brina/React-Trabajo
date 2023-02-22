@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login_Cliente from './Presentation/LoginC/Login_Cliente';
 import App from './Presentation/Carta/App'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import App1 from './Presentation/Lista restaurant/App1';
+import App1 from './Presentation/Lista restaurants/App1';
 import App2 from './Presentation/Agregarpedido/App2';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
 import Hist from './Presentation/Historial/Hist';

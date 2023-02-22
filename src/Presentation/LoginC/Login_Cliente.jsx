@@ -27,7 +27,7 @@ const Login_Cliente = () => {
             if(data.error===""){
                 const jsonData = JSON.stringify(data.cliente)
                 sessionStorage.setItem('data',jsonData)
-                window.location.href='/MarcosBistro'
+                window.location.href='/lista'
             }
             else{
                 setError("Cuenta no existe")
