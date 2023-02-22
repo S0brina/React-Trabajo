@@ -64,7 +64,7 @@ function Sorpresa(){
     <label for="exampleFormControlTextarea1">Opiniones </label>
 
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    <botton type="submit" onClick={()=>saveprofile(comentario, restaurant))}>enviar</botton>
+    <botton type="submit" onClick={()=>saveprofile(comentario, restaurant)}>enviar</botton>
   </div>
   </div>
 </form>
