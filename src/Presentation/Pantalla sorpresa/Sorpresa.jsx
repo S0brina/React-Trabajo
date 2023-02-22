@@ -1,11 +1,13 @@
 import Navbar from "../NavbarUser";
+import sorpre from "./sorpre.css"
 
 function Sorpresa(){
     return (
         <body>
         <Navbar/>   
 <form>
-  <label>Comentarios y calificacion de clientes</label>          
+  <div className="info-rest">
+  <h2>Comentarios y calificacion de clientes</h2>          
   <div className="form-group">
     <label for="exampleFormControlInput1">Nombres</label>
     <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Nombres"/>
@@ -33,8 +35,9 @@ function Sorpresa(){
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Opinines </label>
+    <label for="exampleFormControlTextarea1">Opiniones </label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
   </div>
 </form>
     </body>
