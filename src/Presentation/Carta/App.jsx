@@ -61,7 +61,7 @@ function App() {
     }
     setCartItems(cartCopy);
     console.log(cartItems);
-
+  }   
 
   // const location = useLocation();
   // const navigate = useNavigate();
@@ -97,6 +97,6 @@ function App() {
       </section>
     </main>
   );
-}}
+}
 
 export default App;

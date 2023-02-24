@@ -2,26 +2,31 @@ import React from "react";
 
 function Menu(props) {
   return (
-    <div className="section-center ">
-      {props.plato.map((value, index) => (
-        <>
-          <div className=" bg-light cont-plato menu-item">
-            <div>
-              <img src={value.img} className="photo" />
-              <div className="mt-4">
-                <h3>{value.title}</h3>
-                <div>{value.desc}</div>
-                <div>
-                  <h4 className="price">S./ {value.price}</h4>
+    <div className="container-fluid row row-cols-1 row-cols-md-3 g-4">
+      {props.plato.map((item) => {
+        const { id, title, img, desc, price } = item;
+        return (
+          <div class="col-lg-4 col-md-6 col-sm-6" key={id}>
+            <div class="card h-100">
+              <img src={img} alt={title} class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">{title}</h5>
+                <h4 className="price">S./{price}</h4>
+                <p class="card-text">{desc}</p>
+                <div className="d-flex justify-content-center">
+                  <button
+                    className="btn btn-outline-success"
+                    type="button"
+                    onClick={() => {props.guardarCarrito(id, title, price, img)}}
+                  >
+                    Agregar
+                  </button>
                 </div>
-                <button className="btn btn-outline-succes" type="button" onClick={()=>{guardarCarrito(value.title, value.img, value.price)}}>
-                  Agregar
-                </button>
               </div>
             </div>
           </div>
-        </>
-      ))}
+        );
+      })}
     </div>
   );
 }
