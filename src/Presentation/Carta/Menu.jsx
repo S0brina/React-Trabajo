@@ -14,7 +14,7 @@ function Menu(props) {
                 <div>
                   <h4 className="price">S./ {value.price}</h4>
                 </div>
-                <button className="btn btn-outline-succes" type="button">
+                <button className="btn btn-outline-succes" type="button" onClick={()=>{guardarCarrito(value.title, value.img, value.price)}}>
                   Agregar
                 </button>
               </div>

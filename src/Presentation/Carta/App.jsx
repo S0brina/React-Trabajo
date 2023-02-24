@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import NavBar from "../NavbarUser";
+import Carrito from "./Carrito";
 
 function App() {
   const [listplatos, setListPlatos] = useState([]);
@@ -40,8 +41,30 @@ function App() {
     }
   };
 
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState( []
+    );
+  useEffect(() => {}, [cartItems]);
+
+  const addToCart = (id, name, price, img) => {
+    let cartCopy = [...cartItems];
+    let existingItem = cartCopy.find((cartItem) => cartItem.id == id);
+    if (existingItem) {
+      existingItem.quantity += 1; //update item
+    } else {
+      cartCopy.push({
+        id: id,
+        name: name,
+        price: price,
+        img: img,
+        quantity: 1,
+      });
+    }
+    setCartItems(cartCopy);
+    console.log(cartItems);
+
+
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   useEffect(function () {
     getCategoriaAsyncAwait(1);
@@ -67,10 +90,13 @@ function App() {
           </div>
         </div>
         <Categories categorias={listCtg} onFiltrar={filtrarPlatos} />
-        <Menu plato={listplatos} />
+        <Menu plato={listplatos} guardarCarrito = {addToCart} />
+        <div>
+          <Carrito cartItems={cartItems}/>
+        </div>
       </section>
     </main>
   );
-}
+}}
 
 export default App;
