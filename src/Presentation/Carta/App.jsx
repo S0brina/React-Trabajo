@@ -67,7 +67,7 @@ function App() {
           </div>
         </div>
         <Categories categorias={listCtg} onFiltrar={filtrarPlatos} />
-        <Menu plato={listplatos} />
+        <Menu plato={listplatos}/>
       </section>
     </main>
   );
