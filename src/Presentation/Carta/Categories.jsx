@@ -1,6 +1,6 @@
 import React from "react";
 
-function Categories(props){
+function Categories(props,){
   return <div className = "mt-3 mb-4">
     <select className="form-select" onChange={function(evt) {
       props.onFiltrar(evt.target.value)
@@ -8,8 +8,8 @@ function Categories(props){
       <option value ={-1}>Todo</option>
       {
         props.categorias.map(function(ctg){
-          return <option value = {ctg.id}>
-            {ctg.nombre}
+          return <option value = {ctg.idCat}>
+            {ctg.categoria}
           </option>
         })
       }
