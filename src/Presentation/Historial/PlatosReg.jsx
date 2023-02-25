@@ -12,13 +12,13 @@ function PlatosReg(props) {
       </thead>
       <tbody>
         {props.platos.map((plato) => {
-          const { id, title, nombreCat, desc, price } = plato;
+          const { id, title, categoria , desc, price } = plato;
           return (
             <tr>
               <>
                 <td>{id}</td>
                 <td>{title}</td>
-                <td>{nombreCat}</td>
+                <td>{categoria.nombreCat}</td>
                 <td>{desc}</td>
                 <td>{price}</td>
               </>
