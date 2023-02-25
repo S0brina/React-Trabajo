@@ -1,20 +1,27 @@
+function Categorias(props) {
+  return (
+    <table className="table table-hover">
+      <thead>
+        <tr>
+          <th>ID Categoria</th>
+          <th>Categoria</th>
+        </tr>
+      </thead>
 
-
-function Categorias(props){
-    return <table className="table table-hover">
-        <thead> 
-            <tr>
-                <th>ID Categoria</th>
-                <th>Categoria</th>
-                <th>Fecha de registro</th>
-            </tr>
-        </thead>
-        <tbody>
-            {props.categorias.map((cat,index)=>{
-            <><td>{cat.id}</td><td>{cat.categoria}</td><td>{cat.fecha}</td></>
-            })
-            }
-        </tbody>
+      <tbody>
+        {props.categorias.map((cat) => {
+          const { id, categoria } = cat;
+          return (
+            <>
+              <tr>
+                <td>{id}</td>
+                <td>{categoria}</td>
+              </tr>
+            </>
+          );
+        })}
+      </tbody>
     </table>
+  );
 }
-export default Categorias
+export default Categorias;

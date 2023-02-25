@@ -1,20 +1,32 @@
-function PlatosReg(props){
-    return <table className="table table-hover">
-        <thead> 
+function PlatosReg(props) {
+  return (
+    <table className="table table-hover">
+      <thead>
+        <tr>
+          <th>ID plato</th>
+          <th>Nombre</th>
+          <th>Categoria</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.platos.map((plato) => {
+          const { id, title, nombreCat, desc, price } = plato;
+          return (
             <tr>
-                <th>ID plato</th>
-                <th>Nombre</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>Fecha</th>
+              <>
+                <td>{id}</td>
+                <td>{title}</td>
+                <td>{nombreCat}</td>
+                <td>{desc}</td>
+                <td>{price}</td>
+              </>
             </tr>
-        </thead>
-        <tbody>
-            {props.platos.map((pl,index)=>{
-            <><><td>{pl.id}</td><td>{pl.nombre}</td><td>{pl.categoria}</td></><div>{pl.descripcion}</div><div>{pl.fecha}</div></>
-            })
-            }
-        </tbody>
+          );
+        })}
+      </tbody>
     </table>
+  );
 }
-export default PlatosReg
+export default PlatosReg;

@@ -63,12 +63,14 @@ function App() {
     console.log(cartItems);
   }   
 
+  const restauranteId = 1;
+
   // const location = useLocation();
   // const navigate = useNavigate();
 
   useEffect(function () {
-    getCategoriaAsyncAwait(1);
-    filtrarPlatos(-1, 1);
+    getCategoriaAsyncAwait(restauranteId);
+    filtrarPlatos(-1, restauranteId);
   }, []);
 
   return (
@@ -89,7 +91,7 @@ function App() {
             </h5>
           </div>
         </div>
-        <Categories categorias={listCtg} onFiltrar={filtrarPlatos} />
+        <Categories categorias={listCtg} onFiltrar={filtrarPlatos} restaurante= {restauranteId}/>
         <Menu plato={listplatos} guardarCarrito = {addToCart} />
         <div>
           <Carrito cartItems={cartItems}/>

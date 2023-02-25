@@ -3,42 +3,54 @@ import PlatosReg from "./PlatosReg";
 import Categorias from "./Categorias";
 import NavBarRest from "../NavBarRest"
 import { useEffect, useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import Categories from "../Carta/Categories";
+
 
 function Hist(){
-    const [listpr, setListPr] = useState([])
-    const [listcr, setListCr] = useState([])
+    const [listpr, setListPr] = useState([]);
+    const [listcr, setListCr] = useState([]);
+    const [listFiltro, setListFiltro] = useState([])
 
-    const getCrAsyncAwait = async function(){
+    const categoriasPlatos = async function (idRest) {
         try {
-            const response = await fetch("http://localhost:8000/endpoints/hist/cat")
-            const data = await response.json()
-            setListCr(data.Categorias)
-        } catch ({error}) {
-            console.console.error("Error obteniendo historial");
-        }
-    }
-
-    const getPrAsyncAwait = async function(ctg){
-        try {
-            const response = await fetch(`http://localhost:8000/endpoints/hist/plato?categoria=${ctg}`)
-            const data = await response.json()
-
-            if (data.error ==="") {
-                setListPr(data.platos)
-            }else{
-                console.error(data.error)
-            }
-
+          const response = await fetch(
+            `http://localhost:8000/endpoints/Categorias?restaurant=${idRest}`
+          );
+          const data = await response.json();
+          if(data.error===" "){
+            setListCr(data.categorias);
+            setListFiltro(data.categorias);
+          }else
+            console.error(data.error);
         } catch (error) {
-            console.console.error("Error de comunicación");      
+          console.error("Error de comunicacion");
         }
-    }
-    const location = useLocation()
-    const navigaate = useNavigate()
+    };
+
+
+    const PlatosFiltrados = async function(idCat,idRest){
+        try {
+            const response = await fetch(
+              `http://localhost:8000/endpoints/Carta?categoria=${idCat}&restaurant=${idRest}`
+            );
+            const data = await response.json();
+      
+            if (data.error === " ") {
+              setListPr(data.carta);
+            } else {
+              console.error(data.error);
+            }
+          } catch (error) {
+            console.error("Error de comunicacion");
+          }
+    };
+
+    
+    const restauranteId = 1;
+
     useEffect(function(){
-        getCrAsyncAwait()
-        getPrAsyncAwait(-1)
+        categoriasPlatos(restauranteId)
+        PlatosFiltrados(-1, restauranteId)
     },[])
 
 
@@ -52,6 +64,7 @@ function Hist(){
         
         <div>
             <h2>Platos registradoss</h2>
+            <Categories categorias = {listFiltro} onFiltrar = {PlatosFiltrados} restaurante = {restauranteId}/>
             <PlatosReg platos = {listpr} />
         </div>
     </div>    
