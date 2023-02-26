@@ -4,10 +4,12 @@ import Menu from "./Menu";
 import Categories from "./Categories";
 import NavBar from "../NavbarUser";
 import Carrito from "./Carrito";
+import Restaurante from "./Restaurante";
 
 function App() {
   const [listplatos, setListPlatos] = useState([]);
   const [listCtg, setListCtg] = useState([]);
+  const [infoRest, setInfoRest] = useState([]);
 
   const getCategoriaAsyncAwait = async function (idRest) {
     try {
@@ -41,6 +43,23 @@ function App() {
     }
   };
 
+  const infoRestaurante = async function (idRest){
+    try{
+      const response = await fetch(
+        `http://127.0.0.1:8000/endpoints/Restaurantes?id=${idRest}`
+      );
+      const data = await response.json();
+
+      if (data.error === " "){
+        setInfoRest(data.restaurantes);
+      }else{
+        console.error(data.error);
+      }
+    }catch(error){
+      console.error("Error al obtener restaurante");
+    }
+  };
+
   const [cartItems, setCartItems] = useState( []
     );
   useEffect(() => {}, [cartItems]);
@@ -71,30 +90,22 @@ function App() {
   useEffect(function () {
     getCategoriaAsyncAwait(restauranteId);
     filtrarPlatos(-1, restauranteId);
+    infoRestaurante(restauranteId);
   }, []);
 
   return (
     <main>
       <NavBar />
       <section className="menu section">
-        <div className="info-rest">
-          <h2>Marco's Bistro</h2>
-          <div>
-            <h5>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </h5>
-          </div>
-        </div>
+        <Restaurante restaurante = {infoRest} />
+        <div className="row">
         <Categories categorias={listCtg} onFiltrar={filtrarPlatos} restaurante= {restauranteId}/>
+        <div className="col-lg-9 col-md-9 col-sm-12">
         <Menu plato={listplatos} guardarCarrito = {addToCart} />
-        <div>
+        </div>
+        <div className="col-lg-3 col-md-3 col-sm-12">
           <Carrito cartItems={cartItems}/>
+        </div>
         </div>
       </section>
     </main>

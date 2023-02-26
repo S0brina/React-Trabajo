@@ -22,12 +22,13 @@ const Carrito = (props) => {
               </div>
               <div
                 className="col-7"
-                style={{ fontSize: "15px", lineHeight: "5px" }}
+                style={{ fontSize: "13px", lineHeight: "12px" }}
               >
                 <p>
                   <b>{item.name}</b>
                 </p>
                 <p>Precio Unitario: {item.price}</p>
+                <p>Cantidad: {item.quantity}</p>
               </div>
               <hr />
             </div>
@@ -36,7 +37,7 @@ const Carrito = (props) => {
       )}
       <div className="d-flex justify-content-center">
         <button
-          className="btn btn-outline-success"
+          className="btn btn-outline-success my-2"
           type="button"
         >
           Comprar

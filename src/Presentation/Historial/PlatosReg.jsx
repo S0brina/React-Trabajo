@@ -12,7 +12,7 @@ function PlatosReg(props) {
       </thead>
       <tbody>
         {props.platos.map((plato) => {
-          const { id, title, categoria , desc, price } = plato;
+          const { id, title, categoria, desc, price } = plato;
           return (
             <tr>
               <>

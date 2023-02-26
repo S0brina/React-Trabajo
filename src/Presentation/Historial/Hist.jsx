@@ -54,12 +54,10 @@ function Hist() {
       <NavBarRest />
       <div className="bg-light cont-hist">
         <div>
-          <h2>Categorias registradas</h2>
           <Categorias categorias={listcr} />
         </div>
-
+        <h3>Platos registrados</h3>
         <div>
-          <h2>Platos registradoss</h2>
           <Categories
             categorias={listFiltro}
             onFiltrar={PlatosFiltrados}

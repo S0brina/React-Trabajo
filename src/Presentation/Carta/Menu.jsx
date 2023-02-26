@@ -2,11 +2,11 @@ import React from "react";
 
 function Menu(props) {
   return (
-    <div className="container-fluid row row-cols-1 row-cols-md-3 g-4">
+    <div className="container-fluid row row-cols-1 row-cols-md-3 g-6 mb-5">
       {props.plato.map((item) => {
         const { id, title, img, desc, price } = item;
         return (
-          <div class="col-lg-4 col-md-6 col-sm-6" key={id}>
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-3" key={id}>
             <div class="card h-100">
               <img src={img} alt={title} class="card-img-top" />
               <div class="card-body">

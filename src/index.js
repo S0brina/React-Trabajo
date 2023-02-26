@@ -14,10 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-
-
-        <Route path='/aea' element={<Hist/>}/>
-
+        <Route path='/Historial' element={<Hist/>}/>
         <Route path= '/loginCliente' element = {<Login_Cliente/>} />
         <Route path='/Restaurante' element = {<App/>}/>
         <Route path='/Registros' element = {<Hist/>}/>

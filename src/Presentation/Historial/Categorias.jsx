@@ -1,6 +1,6 @@
 function Categorias(props) {
   return (
-    <table className="table table-hover">
+    <><h3>Categorias registradas</h3><table className="table table-hover">
       <thead>
         <tr>
           <th>ID Categoria</th>
@@ -21,7 +21,7 @@ function Categorias(props) {
           );
         })}
       </tbody>
-    </table>
+    </table></>
   );
 }
 export default Categorias;
