@@ -3,7 +3,7 @@ import Navbar from "../NavBarRest"
 import LoginForm from "./components/LoginRestForm"
 import Log_Rest from "./Log_Rest.css"
 
-function Login_Rest(){
+const Login_Rest = () => {
     const [usuario, setUsuario] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -14,7 +14,7 @@ function Login_Rest(){
 
         try{
             const response = await fetch(
-                "http://localhost:8000/endpoints/loginRestaurante",{
+                "http://localhost:8000/endpoints/loginRest",{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'
@@ -29,6 +29,7 @@ function Login_Rest(){
             if(data.error===""){
                 const jsonData = JSON.stringify(data.restaurante)
                 sessionStorage.setItem('data',jsonData)
+                window.location.href='/MarcosBistro'
             }
             else{
                 setError("Cuenta no existe")
