@@ -9,6 +9,7 @@ import App1 from './Presentation/Lista restaurants/App1';
 import App2 from './Presentation/Agregarpedido/App2';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
 import Hist from './Presentation/Historial/Hist';
+import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/MostrarPedidoRealizado';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ root.render(
         <Route path= '/lista' element ={<App1/>}/>
        <Route path= '/agregar' element={<App2/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
+        <Route path='/MostrarPedido' element ={<MostrarPedidoRealizado/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,0 +1,113 @@
+.btn{
+    background-color: #adf480;
+    color: #ffffff;
+    border-color: #adf480;
+  }
+
+  .btnagrRest{
+    border: 2px solid transparent;
+    background-color: #a7cc91;
+    color: #ffffff;
+    border-color: #adf480;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.25s;
+    margin: 3px auto ;
+  }
+
+  .btnagr {
+    border: 2px solid transparent;
+    background: #adf480;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 3px auto ;
+  }
+
+  .btn:hover , .btnagr:hover , .btnagrRest:hover{
+    background-color: #81f151;
+    border-color: #81f151;
+  }
+  .container-pedidoU{
+    padding-top: 12px;
+    background-color: #a7cc91d3;
+    border-radius: 30px;
+    padding-bottom: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+  }
+  img{
+    float: auto;
+    width: 150px;
+    height: 150px;
+    image-resolution: 10;
+}
+h6, h1, p {
+  color: rgb(255, 255, 255);
+}
+p{
+  color:black
+}
+
+.container-pedido{
+  padding-top: 12px;
+  background-color: #a7cc91d3;
+  border-radius: 30px;
+  padding-bottom: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+
+}
+form{
+  text-align: center;
+}
+.tablita{
+  display: inline-block;    
+}
+/*Tablaaaaaa Estilos*/
+.tabla{
+border-collapse: collapse; /*Esta propiedad hace que parezca mas una tabla*/
+font-family: 'Quicksand', sans-serif;
+}
+table tr th{
+  border: 1px solid #D5D9D9;
+  width: 100px;
+  height: 25px;
+  color: white;
+  background-color: #00438D;
+}
+/* Para el estilo de las nuevas celdas */
+td {
+  border: 1px solid #D5D9D9;
+  width: 100px;
+  height: 25px;
+}
+.caja{
+  display: block;
+}
+.caja label{
+  font-family: 'Quicksand', sans-serif;
+}
+.caja input{
+  width: 8em;
+  height: 2em;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;  
+}
+.submit{
+  width: 8em;
+  height: 2em;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  background-color: #00438D;
+  border: 2px solid white;
+}
