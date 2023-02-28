@@ -10,6 +10,8 @@ import App2 from './Presentation/Agregarpedido/App2';
 import Login_Rest from './Presentation/LoginR/Login_Rest';
 import Hist from './Presentation/Historial/Hist';
 import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/MostrarPedidoRealizado';
+import RegistrarPedido from './Presentation/RegistrarPedido/RegistrarPedido';
+import Ver_estadoPedido from './Presentation/verEstadoPedido/ver_EstadoPedido';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -23,6 +25,8 @@ root.render(
        <Route path= '/agregar' element={<App2/>}/>
         <Route path='/loginRest' element ={<Login_Rest/>}/>
         <Route path='/MostrarPedido' element ={<MostrarPedidoRealizado/>}/>
+        <Route path='/RegistrarPedido' element ={<RegistrarPedido/>}/>
+        <Route path='/verEstadoPedido' element ={<Ver_estadoPedido/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

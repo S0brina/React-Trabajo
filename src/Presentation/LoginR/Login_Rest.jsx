@@ -29,7 +29,7 @@ const Login_Rest = () => {
             if(data.error===""){
                 const jsonData = JSON.stringify(data.restaurante)
                 sessionStorage.setItem('data',jsonData)
-                window.location.href='/MarcosBistro'
+                window.location.href='/MostrarPedido'
             }
             else{
                 setError("Cuenta no existe")
