@@ -64,6 +64,18 @@ export default function HomeNavbar() {
                 Para Restaurantes
               </a>
             </li>
+            <li className="nav-item">
+              <a
+                href="#"
+                className="nav-link text-dark"
+                aria-current="page"
+                onClick={() => {
+                  navigate("/sorpresa");
+                }}
+              >
+                Encuesta
+              </a>
+            </li>
 
           </ul>
           <a

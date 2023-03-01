@@ -12,6 +12,7 @@ import Hist from './Presentation/Historial/Hist';
 import MostrarPedidoRealizado from './Presentation/MostrarPedidoRealizado/MostrarPedidoRealizado';
 import RegistrarPedido from './Presentation/RegistrarPedido/RegistrarPedido';
 import Ver_estadoPedido from './Presentation/verEstadoPedido/ver_EstadoPedido';
+import Sorpresa from './Presentation/sorpresa/Sorpresa';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -27,6 +28,7 @@ root.render(
         <Route path='/MostrarPedido' element ={<MostrarPedidoRealizado/>}/>
         <Route path='/RegistrarPedido' element ={<RegistrarPedido/>}/>
         <Route path='/verEstadoPedido' element ={<Ver_estadoPedido/>}/>
+        <Route path='/sorpresa' element={<Sorpresa/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
