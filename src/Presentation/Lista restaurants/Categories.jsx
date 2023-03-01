@@ -9,7 +9,7 @@ function Categories(props){
       {
         props.categorias.map(function(ctg){
           return <option value = {ctg.id}>
-            {ctg.nombres}
+            {ctg.nombre}
           </option>
         })
       }
