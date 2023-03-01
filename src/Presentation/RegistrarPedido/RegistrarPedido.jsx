@@ -1,84 +1,131 @@
 import Navbar from "../NavBarRest"
 import React, { Component} from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../verEstadoPedido/ver_EstadoPedido.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faEdit} from '@fortawesome/free-solid-svg-icons'
-import axios from "axios";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
-const url= "http://127.0.0.1:8000/endpoints/registrarPedido";
 
-class RegistrarPedido extends Component {
-    state={
-        data:{
-          pedido: []
-        },
-        modalInsertar: false,
-        modalEliminar: false,
-        form:{
-          id:'',
-          cod: '',
-          producto: '',
-          cliente:'',
-          estado:'',
-          tipoModal:'',
-        }
+function RegistrarPedido() {
+      const [orden, setOrden] = useState("");
+      const [error, setError] = useState("");
+    
+      const CvRegistrar = function () {
+        const [codig, setCodig] = useState("");
+        
+        const handleSumit = async function (event){ 
+
+          const body = {
+            codig: codig,
+          };
+
+          const response = await fetch(
+            "http://127.0.0.1:8000/endpoints/registrarPedido",
+            {
+              method:"POST",
+              body: JSON.stringify(body),
+            }
+          );
+          const data = await response.json();
+          if (data.error == ""){
+            setError(data.error);
+            setOrden(data.productos);
+          }else{
+            setError(data.error);
+          }
+
+        };
+        return(
+          <form>
+            <input name = 'search'
+             className="form-control me-2"
+             type="text"
+             placeholder="Codigo"
+             aria-label="Search"
+             id="id"
+             value={codig}
+             onChange={(event) => setCodig(event.target.value)}/>
+
+            <button type="button"
+            className="btn btn-outline-success" onClick={handleSumit}>
+              Buscar</button>
+            </form>
+        );
       }
-      peticionGet=()=>{
-        axios.get(url).then(response=>{
-          this.setState({data: response.data});
-        }).catch(error=>{
-          console.log(error.message);
+      const Vacio = function () {
+        console.log("Se hizo click");
+        setOrden("");
+        setError("");
+        return <div>zzzz</div>;
+      };
+
+      const cambiarEstadoPedido = (id, nuevoEstado) => {
+        fetch('http://127.0.0.1:8000/endpoints/actualizarPedido', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({id: id, estado: nuevoEstado})
         })
-        }
-        peticionPut=()=>{
-          console.log(this.state.data.pedido)
-            this.listaCopia = this.state.data.pedido
-            this.listaCopia[this.state.form.id] = this.state.form 
-
-            this.setState({data: {
-              pedido: this.listaCopia
-            }})
-            console.log(this.state)
-          }
-
-        componentDidMount(){
-          this.peticionGet();
-          console.log(this.state)
-        }
-        modalInsertar=()=>{
-            this.setState({modalInsertar: !this.state.modalInsertar});
-          }
-
-        seleccionarCodigo=(registro)=>{
-            this.setState({
-                tipoModal: 'actualizar',
-                form:{
-                id:registro.id,
-                cod:registro.cod,
-                producto:registro.producto,
-                cliente:registro.cliente,
-                estado:registro.estado,
+        .then(response => {
+          console.log(response);
+          setOrden(orden.map(orden => {
+            if (orden.id === id) {
+              return {
+                ...orden,
+                estado: nuevoEstado
+              };
             }
-            })
-        }
-        handleChange=async e=>{
-            e.persist();
-            await this.setState({
-              form:{
-                ...this.state.form,
-                [e.target.name]: e.target.value
-              }
-            });
-            console.log(this.state.form);
-            }
+            return orden;
+          }));
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
 
-              componentDidMount() {
-                this.peticionGet();
-              }
-        render(){
-            const {form}=this.state; 
+      const Tabla = function(){
+        if (error === "") {
+          if (orden !== "") {
+            return (
+              <table class="table table-striped table-esp">
+            <tbody>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Detalles</th>
+              <th>Monto</th>
+              <th>Dirección</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+            <tr>
+            <td>{orden.id}</td>
+            <td>{orden.usuario}</td>
+            <td>{orden.detalles}</td>
+            <td>{orden.monto}</td>
+            <td>{orden.direccion}</td>
+            <td>{orden.fecha}</td>
+            <td>{orden.estado}</td>
+              <td>
+                <button className="btn btn-primary" onClick={cambiarEstadoPedido(orden.id, 'ENTREGADO')}>Confirmar Entrega</button>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+            );
+          } else {
+            return <div>No hay pedidos seleccionados</div>;
+          }
+        } else {
+          return <div>{error}</div>;
+        }
+
+      };
+      
+      const navigate = useNavigate();
+      
 
 return(
 <body>
@@ -89,87 +136,14 @@ return(
     <div className="container-pedido text-center">
 
         <div>
-            <input name = 'search' className="form-control me-2" type="text" placeholder="Codigo" aria-label="Search"/>
-
-            <button type="submit" className="btn btn-outline-success">Buscar</button>
-            <table class="table table-striped table-esp">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Codigo Buscado</th>
-                    <th>Resumen Producto(s)</th>  
-                    <th>Cliente Datos</th>
-                    <th> Estado</th>                  
-                </tr>
-            </thead>
-            <tbody>
-            {this.state.data.pedido.map((registro,xd)=>{
-                return(
-                  <tr key = {xd}>
-                  <td>{registro.id}</td>
-                  <td>{registro.cod}</td>
-                  <td>{registro.producto}</td>
-                  <td>{registro.cliente}</td>
-                  <td>{registro.estado}</td>
-                  <td>
-                    <button className="btn btn-primary" onClick={()=>{this.seleccionarCodigo(registro);this.modalInsertar()}}><FontAwesomeIcon icon={faEdit}/></button>
-                  </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-        </table>
-        <Modal isOpen={this.state.modalInsertar}>
-                <ModalHeader style={{display: 'block'}}>
-                  <span style={{float: 'right'}} onClick={()=>this.modalInsertar()}>x</span>
-                </ModalHeader>
-                <ModalBody>
-                  <div className="form-group">
-                    <label htmlFor="id">ID</label>
-                    <input className="form-control" type="text" name="id" id="id" readOnly onChange={this.handleChange} value={form.id}/>
-                    <br />
-                    <label htmlFor="nombre">Codigo</label>
-                    <input className="form-control" type="text" name="cod" id="cod" onChange={this.handleChange} value={form.cod}/>
-                    <br />
-                    <label htmlFor="nombre">Producto</label>
-                    <input className="form-control" type="text" name="producto" id="producto" onChange={this.handleChange} value={form.producto}/>
-                    <br />
-                    <label htmlFor="nombre">Cliente</label>
-                    <input className="form-control" type="text" name="cliente" id="cliente" onChange={this.handleChange} value={form.cliente}/>
-                    <br />
-                    <label htmlFor="capital_bursatil">Estado</label>
-                    <input className="form-control" type="text" name="estado" id="estado" onChange={this.handleChange} />
-                  </div>
-                </ModalBody>
-
-                <ModalFooter>
-                  {this.state.tipoModal==='insertar'?
-                    <button className="btn btn-success" onClick={()=>this.peticionPost()}>
-                    Insertar
-                  </button>: <button className="btn btn-primary" onClick={()=>this.peticionPut()}>
-                    Actualizar
-                  </button>
-  }
-                    <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
-                </ModalFooter>
-          </Modal>
-
-
-          <Modal isOpen={this.state.modalEliminar}>
-            <ModalBody>
-               Estás seguro que deseas eliminar a la empresa 
-            </ModalBody>
-            <ModalFooter>
-              <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>Sí</button>
-              <button className="btn btn-secundary" onClick={()=>this.setState({modalEliminar: false})}>No</button>
-            </ModalFooter>
-          </Modal>
+          <CvRegistrar/>
+            <Tabla/>
         </div>
 
 
     </div>
     </body>
     )
-        }}
+        }
 
 export default RegistrarPedido

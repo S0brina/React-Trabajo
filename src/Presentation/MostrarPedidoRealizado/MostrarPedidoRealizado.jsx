@@ -1,86 +1,50 @@
-import React, { Component} from "react";
-
+import React, { useEffect, useState, Component } from 'react';
 import "../verEstadoPedido/ver_EstadoPedido.css"
 //import "../MostrarPedidoRealizado/script"
 import Navbar from "../NavBarRest";
-import axios from "axios";
 
+function MostrarPedidoRealizado() {
+  const [ordenes, setOrdenes] = useState([]);
 
-const url= "http://127.0.0.1:8000/endpoints/Mostrar_ListaPedido";
+  useEffect(() => {
+    async function fetchOrdenes() {
+      const response = await fetch('http://localhost:8000/endpoints/verificarPedido');
+      const data = await response.json();
+      setOrdenes(data.ordenes);
+    }
+    fetchOrdenes();
+  }, []);
 
-
-class MostrarPedidoRealizado extends Component {
-
-state={
-  data:{
-    pedido: []
-  },
-  modalInsertar: false,
-  modalEliminar: false,
-  form:{
-    id:'',
-    cod: '',
-    producto: '',
-    precio:'',
-    estado:'',
-  }
-}
-
-peticionGet=()=>{
-  axios.get(url).then(response=>{
-    this.setState({data: response.data});
-  }).catch(error=>{
-    console.log(error.message);
-  })
-  }
-
-  componentDidMount(){
-    this.peticionGet();
-    console.log(this.state)
-  }
-  render(){
-    return(
-
-        <div>
-          <Navbar/>
-        <div className="container text-center">
-        <div className="titulo">
-          <h2>Pedidos Realizados Ultimamente</h2>
-        </div>
-        <div className="container-pedido">
-          <table className="table table-striped table-esp">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Cod Pedido</th>
-                <th>Productos</th>
-                <th>Precio Total</th>
-                <th>Estado</th>
-                <th> </th>
-              </tr>
-            </thead>
-            <tbody>{console.log(this.state)}
-            {
-            this.state.data.pedido.map((empresa,xd)=>{
-                return(
-                  <tr key = {xd}>
-                  <td>{empresa.id}</td>
-                  <td>{empresa.cod}</td>
-                  <td>{empresa.producto}</td>
-                  <td>{empresa.precio}</td>
-                  <td>{empresa.estado}</td>
-                  </tr>
-                )
-              })}
-
-            </tbody>
-          </table>
-        </div>
-        </div>
-        </div>
-
-    )
-
-  }
+  return (
+    <div>
+      <Navbar />
+      <center><h1>Estado de pedidos</h1></center>
+      <table class="table table-striped table-esp">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Monto</th>
+            <th>Dirección</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ordenes.map(orden => (
+            <tr key={orden.id}>
+              <td>{orden.id}</td>
+              <td>{orden.usuario}</td>
+              <td>{orden.monto}</td>
+              <td>{orden.direccion}</td>
+              <td>{orden.fecha}</td>
+              <td>{orden.estado}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+  
 }
 export default MostrarPedidoRealizado;

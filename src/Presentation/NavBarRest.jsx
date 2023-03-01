@@ -45,7 +45,7 @@ export default function HomeNavbar() {
                 className="nav-link text-dark"
                 aria-current="page"
                 onClick={() => {
-                  navigate("/MostrarPedidoRealizado");
+                  navigate("/MostrarPedido");
                 }}
               >
                 Pedidos
