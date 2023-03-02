@@ -9,6 +9,7 @@ function Hist() {
   const [listpr, setListPr] = useState([]);
   const [listcr, setListCr] = useState([]);
   const [listFiltro, setListFiltro] = useState([]);
+  const [restauranteId, setRestauranteId] = useState('');
 
   const categoriasPlatos = async function (idRest) {
     try {
@@ -41,13 +42,16 @@ function Hist() {
       console.error("Error de comunicacion");
     }
   };
-
-  const restauranteId = 1;
-
+ 
   useEffect(function () {
+    const storedValue = sessionStorage.getItem('data');
+    if (storedValue){
+      const value = JSON.parse(storedValue);
+      setRestauranteId(value.id);
+    }
     categoriasPlatos(restauranteId);
     PlatosFiltrados(-1, restauranteId);
-  }, []);
+  }, [restauranteId]);
 
   return (
     <main>
