@@ -14,7 +14,7 @@ const Login_Rest = () => {
 
         try{
             const response = await fetch(
-                "http://localhost:8000/endpoints/loginRest",{
+                "https://demotdjango3.azurewebsites.net/endpoints/loginRest",{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'

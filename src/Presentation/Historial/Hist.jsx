@@ -14,7 +14,7 @@ function Hist() {
   const categoriasPlatos = async function (idRest) {
     try {
       const response = await fetch(
-        `http://localhost:8000/endpoints/Categorias?restaurant=${idRest}`
+        `https://demotdjango3.azurewebsites.net/endpoints/Categorias?restaurant=${idRest}`
       );
       const data = await response.json();
       if (data.error === " ") {
@@ -29,7 +29,7 @@ function Hist() {
   const PlatosFiltrados = async function (idCat, idRest) {
     try {
       const response = await fetch(
-        `http://localhost:8000/endpoints/Carta?categoria=${idCat}&restaurant=${idRest}`
+        `https://demotdjango3.azurewebsites.net/endpoints/Carta?categoria=${idCat}&restaurant=${idRest}`
       );
       const data = await response.json();
 

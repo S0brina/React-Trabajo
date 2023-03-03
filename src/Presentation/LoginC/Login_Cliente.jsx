@@ -12,7 +12,7 @@ const Login_Cliente = () => {
         evt.preventDefault();
 
         try{
-            const response = await fetch("http://localhost:8000/endpoints/loginCliente",{
+            const response = await fetch("https://demotdjango3.azurewebsites.net/endpoints/loginCliente",{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'

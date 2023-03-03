@@ -14,7 +14,7 @@ function App() {
   const getCategoriaAsyncAwait = async function (idRest) {
     try {
       const response = await fetch(
-        `http://localhost:8000/endpoints/Categorias?restaurant=${idRest}`
+        `https://demotdjango3.azurewebsites.net/endpoints/Categorias?restaurant=${idRest}`
       );
       const data = await response.json();
       if(data.error===" "){
@@ -29,7 +29,7 @@ function App() {
   const filtrarPlatos = async function (idCat,idRest) {
     try {
       const response = await fetch(
-        `http://localhost:8000/endpoints/Carta?categoria=${idCat}&restaurant=${idRest}`
+        `https://demotdjango3.azurewebsites.net/endpoints/Carta?categoria=${idCat}&restaurant=${idRest}`
       );
       const data = await response.json();
 
@@ -46,7 +46,7 @@ function App() {
   const infoRestaurante = async function (idRest){
     try{
       const response = await fetch(
-        `http://127.0.0.1:8000/endpoints/Restaurantes?id=${idRest}`
+        `https://demotdjango3.azurewebsites.net/endpoints/Restaurantes?id=${idRest}`
       );
       const data = await response.json();
 

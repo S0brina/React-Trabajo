@@ -27,7 +27,7 @@ function Ver_estadoPedido() {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/endpoints/registrarPedido",
+        "https://demotdjango3.azurewebsites.net/endpoints/registrarPedido",
         {
           method:"POST",
           body: JSON.stringify(body),

@@ -20,7 +20,7 @@ function RegistrarPedido() {
           };
 
           const response = await fetch(
-            "http://127.0.0.1:8000/endpoints/registrarPedido",
+            "https://demotdjango3.azurewebsites.net/endpoints/registrarPedido",
             {
               method:"POST",
               body: JSON.stringify(body),
@@ -60,7 +60,7 @@ function RegistrarPedido() {
       };
 
       const cambiarEstadoPedido = (id, nuevoEstado) => {
-        fetch('http://127.0.0.1:8000/endpoints/actualizarPedido', {
+        fetch('https://demotdjango3.azurewebsites.net/endpoints/actualizarPedido', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

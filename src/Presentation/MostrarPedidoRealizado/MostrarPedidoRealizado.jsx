@@ -8,7 +8,7 @@ function MostrarPedidoRealizado() {
 
   useEffect(() => {
     async function fetchOrdenes() {
-      const response = await fetch('http://localhost:8000/endpoints/verificarPedido');
+      const response = await fetch('https://demotdjango3.azurewebsites.net/endpoints/verificarPedido');
       const data = await response.json();
       setOrdenes(data.ordenes);
     }
